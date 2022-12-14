@@ -105,4 +105,4 @@ deploy:
   type: git
   repo: git@github.com:MyNetdisk/MyNetdisk.github.io.git
   # example, https://github.com/hexojs/hexojs.github.io
-  branch: main
+  branch: master
