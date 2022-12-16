@@ -1,23 +1,22 @@
 ---
 title: 合并两个有序数组
 date: 2021-11-02
-categories: 
+categories:
   - LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 ---
 
-::: tip
-给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
-
-请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
-:::
+> 给你两个按 非递减顺序 排列的整数数组  nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
+>
+> 请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 
 <!-- more -->
 
 # 88. 合并两个有序数组
-给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
+
+给你两个按 非递减顺序 排列的整数数组  nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
 
 请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 
@@ -44,7 +43,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 解释：需要合并的数组是 [] 和 [1] 。
 合并结果是 [1] 。
 注意，因为 m = 0 ，所以 nums1 中没有元素。nums1 中仅存的 0 仅仅是为了确保合并结果可以顺利存放到 nums1 中。
- 
+
 提示：
 
 nums1.length == m + n
@@ -52,7 +51,6 @@ nums2.length == n
 0 <= m, n <= 200
 1 <= m + n <= 200
 -109 <= nums1[i], nums2[j] <= 109
- 
 
 进阶：你可以设计实现一个时间复杂度为 O(m + n) 的算法解决此问题吗？
 
@@ -61,15 +59,17 @@ nums2.length == n
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 # 解题思路
+
 先替换，再排序。
 
 # 代码
+
 ```ts
 /**
  Do not return anything, modify nums1 in-place instead.
  */
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
-   nums1.splice(m,nums1.length-m,...nums2);
-   nums1.sort((a,b)=>a-b);
-};
+  nums1.splice(m, nums1.length - m, ...nums2);
+  nums1.sort((a, b) => a - b);
+}
 ```

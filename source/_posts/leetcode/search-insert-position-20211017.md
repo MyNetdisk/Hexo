@@ -1,21 +1,21 @@
 ---
 title: 搜索插入位置
 date: 2021-10-17
-categories: 
+categories:
   - LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 ---
 
-::: tip
-给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-请必须使用时间复杂度为 O(log n) 的算法。
-:::
+> 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+>
+> 请必须使用时间复杂度为 O(log n) 的算法。
 
 <!-- more -->
 
 # 35. 搜索插入位置
+
 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
 
 请必须使用时间复杂度为 O(log n) 的算法。
@@ -40,7 +40,6 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 
 输入: nums = [1], target = 0
 输出: 0
- 
 
 提示:
 1 <= nums.length <= 104
@@ -49,29 +48,33 @@ nums 为无重复元素的升序排列数组
 -104 <= target <= 104
 
 # 解题思路
+
 题目要求使用时间复杂度为 O(log n) 的算法， 也就表明需要使用二分法。主要需要处理找不到元素的情况，一般二分搜索找不到返回-1，而此题需要我们返回查找元素的下标，即 left 或者 right + 1
 
 代码
+
 ```ts
 function searchInsert(nums: number[], target: number): number {
-  let left = 0, right = nums.length - 1
+  let left = 0,
+    right = nums.length - 1;
   while (left <= right) {
-    const middle = left + Math.floor((right - left) / 2)
-    if(nums[middle] === target){
-      return middle
-    }else if (nums[middle] > target) {
-      right = middle - 1
-    }else if (nums[middle] < target) {
-      left = middle + 1
+    const middle = left + Math.floor((right - left) / 2);
+    if (nums[middle] === target) {
+      return middle;
+    } else if (nums[middle] > target) {
+      right = middle - 1;
+    } else if (nums[middle] < target) {
+      left = middle + 1;
     }
   }
   // while的退出条件为 left <= right，即如果while退出的时候还没找到元素，
   // 那么left已经移动到了该元素应该存在的位置，或者right+1就是该元素应该
   // 存在的位置
   // return (right + 1)
-  return left
-};
+  return left;
+}
 ```
+
 作者：verten
 链接：https://leetcode-cn.com/problems/search-insert-position/solution/er-fen-sou-suo-zhu-yao-chu-li-dian-zai-y-r9wh/
 来源：力扣（LeetCode）

@@ -1,41 +1,44 @@
 ---
 title: 对称二叉树
 date: 2021-11-11
-categories: 
+categories:
   - LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 ---
 
-::: tip
-给定一个二叉树，检查它是否是镜像对称的。
-:::
+> 给定一个二叉树，检查它是否是镜像对称的。
 
 <!-- more -->
 
 # 101. 对称二叉树
+
 给定一个二叉树，检查它是否是镜像对称的。
 
- 
 
-例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
 
-    1
-   / \
-  2   2
- / \ / \
-3  4 4  3
- 
-
-但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+例如，二叉树  [1,2,2,3,4,4,3] 是对称的。
 
     1
-   / \
-  2   2
-   \   \
-   3    3
- 
+
+/ \
+ 2 2
+/ \ / \
+3 4 4 3
+
+
+
+但是下面这个  [1,2,2,null,3,null,3] 则不是镜像对称的:
+
+    1
+
+/ \
+ 2 2
+\ \
+ 3 3
+
+
 
 进阶：
 
@@ -46,6 +49,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 # 方法一：递归
+
 思路和算法
 
 如果一个树的左子树与右子树镜像对称，那么这个树是对称的。
@@ -60,6 +64,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 我们可以实现这样一个递归函数，通过「同步移动」两个指针的方法来遍历这棵树，pp 指针和 qq 指针一开始都指向这棵树的根，随后 pp 右移时，qq 左移，pp 左移时，qq 右移。每次检查当前 pp 和 qq 节点的值是否相等，如果相等再判断左右子树是否对称。
 
 # 代码
+
 ```ts
 /**
  * Definition for a binary tree node.
@@ -75,15 +80,15 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
  * }
  */
 
-const check = (p:TreeNode|null,q:TreeNode|null):boolean=>{
-   if(!p&&!q) return true;
-   if(!p||!q) return false;
-   return p.val===q.val && check(p.left,q.right) && check(p.right,q.left);
-}
+const check = (p: TreeNode | null, q: TreeNode | null): boolean => {
+  if (!p && !q) return true;
+  if (!p || !q) return false;
+  return p.val === q.val && check(p.left, q.right) && check(p.right, q.left);
+};
 
 function isSymmetric(root: TreeNode | null): boolean {
-    return check(root,root);
-};
+  return check(root, root);
+}
 ```
 
 # 复杂度分析

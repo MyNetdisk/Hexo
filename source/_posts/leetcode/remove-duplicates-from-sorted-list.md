@@ -1,22 +1,21 @@
 ---
 title: 删除排序链表中的重复元素
 date: 2021-11-02
-categories: 
+categories:
   - LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 ---
 
-::: tip
-存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除所有重复的元素，使每个元素 只出现一次 。
-
-返回同样按升序排列的结果链表。
-:::
+> 存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除所有重复的元素，使每个元素 只出现一次 。
+>
+> 返回同样按升序排列的结果链表。
 
 <!-- more -->
 
 # 83. 删除排序链表中的重复元素
+
 存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除所有重复的元素，使每个元素 只出现一次 。
 
 返回同样按升序排列的结果链表。
@@ -29,7 +28,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 
 输入：head = [1,1,2,3,3]
 输出：[1,2,3]
- 
+
 提示：
 
 链表中节点数目在范围 [0, 300] 内
@@ -41,6 +40,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 # 思路
+
 标签：链表
 
 指定 cur 指针指向头部 head
@@ -54,6 +54,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 时间复杂度：O(n)
 
 # 代码
+
 ```ts
 /**
  * Definition for singly-linked list.
@@ -68,20 +69,21 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
  */
 
 function deleteDuplicates(head: ListNode | null): ListNode | null {
-  if(!head){
-    return head; 
+  if (!head) {
+    return head;
   }
   let cur = head;
-  while(cur.next){
-    if(cur.val===cur.next.val){
-        cur.next = cur.next.next
-    }else{
-        cur = cur.next
+  while (cur.next) {
+    if (cur.val === cur.next.val) {
+      cur.next = cur.next.next;
+    } else {
+      cur = cur.next;
     }
   }
   return head;
-};
+}
 ```
+
 作者：guanpengchn
 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/solution/hua-jie-suan-fa-83-shan-chu-pai-xu-lian-biao-zhong/
 来源：力扣（LeetCode）

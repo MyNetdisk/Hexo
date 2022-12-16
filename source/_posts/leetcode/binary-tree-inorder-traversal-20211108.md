@@ -8,9 +8,7 @@ tags:
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 ---
 
-::: tip
-给定一个二叉树的根节点 root ，返回它的 中序 遍历。
-:::
+>给定一个二叉树的根节点 root ，返回它的 中序 遍历。
 
 <!-- more -->
 

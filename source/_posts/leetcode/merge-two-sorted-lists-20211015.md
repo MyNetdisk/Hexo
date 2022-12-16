@@ -1,21 +1,20 @@
 ---
 title: 合并两个有序链表
 date: 2021-10-15
-categories: 
+categories:
   - LeetCode
 tags:
   - 数据结构与算法
 cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 ---
 
-::: tip
-将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
-:::
+> 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 
 <!-- more -->
 
 # 21. 合并两个有序链表
-将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+
+将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 
 示例 1：
 输入：l1 = [1,2,4], l2 = [1,3,4]
@@ -35,6 +34,7 @@ cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
 l1 和 l2 均按 非递减顺序 排列
 
 # 解题思路
+
 同合并两个有序数组逻辑基本一样，只不过这里是链表。
 
 新建一个链表承接结果。
@@ -44,22 +44,25 @@ l1 和 l2 均按 非递减顺序 排列
 代码:
 
 ```ts
-function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-    const newList = new ListNode(0);
-    let cur = newList;
-    while (l1 && l2) {
-        if (l1.val <= l2.val) {
-            cur.next = l1;
-            l1 = l1.next;
-        } else {
-            cur.next = l2;
-            l2 = l2.next;
-        }
-        cur = cur.next;
+function mergeTwoLists(
+  l1: ListNode | null,
+  l2: ListNode | null
+): ListNode | null {
+  const newList = new ListNode(0);
+  let cur = newList;
+  while (l1 && l2) {
+    if (l1.val <= l2.val) {
+      cur.next = l1;
+      l1 = l1.next;
+    } else {
+      cur.next = l2;
+      l2 = l2.next;
     }
-    cur.next = l1 ? l1 : l2;
-    return newList.next;
-};
+    cur = cur.next;
+  }
+  cur.next = l1 ? l1 : l2;
+  return newList.next;
+}
 ```
 
 作者：zxhnext
