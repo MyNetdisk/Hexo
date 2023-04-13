@@ -1,11 +1,11 @@
 ---
 title: 修改docker镜像存储路径时候发现没办法修改
-date: 2022-12-16
+date: 2023-04-13
 categories:
-  - Front-end
+  - 运维
 tags:
-  - web
-  - 移动端
+  - docker
+  - docker-desktop
 ---
 
 ## 前言
@@ -16,15 +16,13 @@ tags:
 
 这个是因为 win10 在高版本下，也就是有 wsl 子系统的情况下，安装会默认启用 WSL2 模式，而不是 Hyper-V 虚拟机模式，在前者模式下，默认存储目录在 C 盘，且设置中无法选择目录，但有个选项可以切换模式，切换模式后就可以切换目录了
 
-![Why](https://img-blog.csdnimg.cn/ed7cc399f61045ec849ab8aecf8fd944.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUF9uaW5n,size_20,color_FFFFFF,t_70,g_se,x_16)
+![Why](/image/posts/ed7cc399f61045ec849ab8aecf8fd944.png)
 
 ### How?
 
 关掉后就可以设置了
 
-![How](https://img-blog.csdnimg.cn/fdf95813ef3a4b92991cda588eb09fe8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUF9uaW5n,size_20,color_FFFFFF,t_70,g_se,x_16)
-
-![测试](https://pic.3gbizhi.com/2019/1112/20191112013312648.jpg)
+![How](/image/posts/fdf95813ef3a4b92991cda588eb09fe8.png)
 
 ### 关于本文
 

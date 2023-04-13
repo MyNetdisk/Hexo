@@ -1,14 +1,11 @@
 ---
-
 title: 罗马数字转整数
 date: 2021-05-11
 categories:
-
-- LeetCode
-  tags:
-- 数据结构与算法
-  cover: https://images.mynetdisk.vercel.app/vuepress/cover/WechatIMG11.png
-
+  - LeetCode
+tags:
+  - 数据结构与算法
+cover: https://pic.3gbizhi.com/2019/1112/20191112013312648.jpg
 ---
 
 > 给定一个罗马数字，将其转换成整数。输入确保在 1  到 3999 的范围内。
@@ -36,8 +33,6 @@ X  可以放在  L (50) 和  C (100) 的左边，来表示 40 和  90。 
 C  可以放在  D (500) 和  M (1000) 的左边，来表示  400 和  900。
 给定一个罗马数字，将其转换成整数。输入确保在 1  到 3999 的范围内。
 
-
-
 示例  1:
 输入: "III"
 输出: 3
@@ -59,8 +54,6 @@ C  可以放在  D (500) 和  M (1000) 的左边，来表示  400 和  90
 输入: "MCMXCIV"
 输出: 1994
 解释: M = 1000, CM = 900, XC = 90, IV = 4.
-
-
 
 提示：
 
