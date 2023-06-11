@@ -9,9 +9,9 @@ tags:
 
 ## 本地使用 gpt 的方式
 
-1.下载并安装 Docker [官网下载]:[https://www.docker.com/products/docker-desktop/]
+1.下载并安装 Docker [官网下载](https://www.docker.com/products/docker-desktop/)
 
-2.使用开源项目：潘多拉 (Pandora) [【github】]:[https://github.com/pengzhile/pandora]
+2.使用开源项目：潘多拉 (Pandora) [【github】](https://github.com/pengzhile/pandora)
 
 3.一键安装命令：
 
