@@ -1,5 +1,5 @@
 ---
-title: [报错解决] Failed to connect to github.com port 443
+title: Failed to connect to github.com port 443
 date: 2024-01-27
 categories:
   - github

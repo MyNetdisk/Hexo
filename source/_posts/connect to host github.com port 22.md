@@ -1,5 +1,5 @@
 ---
-title: [解决]git-ssh: connect to host github.com port 22: Connection timed out
+title: "git-ssh: connect to host github.com port 22: Connection timed out"
 date: 2024-01-27
 categories:
   - github
